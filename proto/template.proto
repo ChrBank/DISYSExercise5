@@ -1,8 +1,22 @@
 syntax = "proto3";
 
-option go_package = "github.com/ChrBank/DISYSExercise5";
+option go_package = "github.com/ChrBank/DISYSExercise5/proto";
 
 package proto;
 
-option go_package = "DSYS-gRPC-template/gRPC";
-package gRPC;
+service TimeSync
+{
+    rpc Ping (Ack) returns (Ack);
+    rpc GetTime (Ack) returns (Time);
+}
+
+message Ack
+{
+    string clientName = 1;
+}
+
+message Time
+{
+    uint64 t1 = 1;
+    uint64 t2 = 2;
+}
