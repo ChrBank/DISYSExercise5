@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"log"
 	"net"
+	"time"
 
 	gRPC "github.com/ChrBank/DISYSExercise5/proto"
 	"google.golang.org/grpc"
@@ -29,6 +30,11 @@ func main() {
 	flag.Parse()
 	fmt.Println("STARTING SERVER")
 
+	go launchServer()
+
+	for {
+		time.Sleep(time.Second * 5)
+	}
 }
 
 func launchServer() {
@@ -65,6 +71,18 @@ func launchServer() {
 func (s *Server) Ping(ctx context.Context, a *gRPC.Ack) (*gRPC.Ack, error) {
 	//some code here
 
-	// ack :=  gRPC.Ack{clientName: "Andreas"}// make an instance of your return type
+	// make an instance of your return type
 	return &gRPC.Ack{ClientName: "Andreas"}, nil
+}
+
+func (s *Server) GetTime(ctx context.Context, a *gRPC.Ack) (*gRPC.Time, error) {
+	// some code
+	// t1 := time.Now()
+
+	var a1 uint64 = 123123;
+
+	var b1 uint64 = 321321;
+
+
+	return &gRPC.Time{T1: a1, T2: b1}, nil
 }

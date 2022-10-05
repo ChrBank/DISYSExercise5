@@ -17,6 +17,6 @@ message Ack
 
 message Time
 {
-    uint64 t1 = 1;
-    uint64 t2 = 2;
+    uint64 T1 = 1;
+    uint64 T2 = 2;
 }
