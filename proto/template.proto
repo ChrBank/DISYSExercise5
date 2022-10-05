@@ -12,7 +12,7 @@ service TimeSync
 
 message Ack
 {
-    string clientName = 1;
+    string ClientName = 1;
 }
 
 message Time
