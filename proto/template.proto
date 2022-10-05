@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+option go_package = "github.com/ChrBank/DISYSExercise5";
+
+package proto;
+
+option go_package = "DSYS-gRPC-template/gRPC";
+package gRPC;
