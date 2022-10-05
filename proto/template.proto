@@ -2,6 +2,8 @@ syntax = "proto3";
 
 option go_package = "github.com/ChrBank/DISYSExercise5/proto";
 
+import "google/protobuf/timestamp.proto";
+
 package proto;
 
 service TimeSync
@@ -17,6 +19,6 @@ message Ack
 
 message Time
 {
-    uint64 T1 = 1;
-    uint64 T2 = 2;
+    google.protobuf.Timestamp T1 = 1;
+    google.protobuf.Timestamp T2 = 2;
 }

@@ -10,6 +10,7 @@ import (
 
 	gRPC "github.com/ChrBank/DISYSExercise5/proto"
 	"google.golang.org/grpc"
+	"google.golang.org/protobuf/types/known/timestamppb"
 )
 
 type Server struct {
@@ -76,13 +77,11 @@ func (s *Server) Ping(ctx context.Context, a *gRPC.Ack) (*gRPC.Ack, error) {
 }
 
 func (s *Server) GetTime(ctx context.Context, a *gRPC.Ack) (*gRPC.Time, error) {
+	t1 := timestamppb.Now()
+
 	// some code
 	// t1 := time.Now()
 
-	var a1 uint64 = 123123;
-
-	var b1 uint64 = 321321;
-
-
-	return &gRPC.Time{T1: a1, T2: b1}, nil
+	t2 := timestamppb.Now()
+	return &gRPC.Time{T1: t1, T2: t2}, nil
 }
