@@ -29,11 +29,10 @@ func main() {
 	defer ServerConn.Close()
 
 	parseInput()
-
 }
 
 func parseInput() {
-	panic("unimplemented")
+	server.Ping(context.Background(), &gRPC.Ack{ClientName: "Andreas"})
 }
 
 func ConnectToServer() {

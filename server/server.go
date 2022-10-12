@@ -71,6 +71,7 @@ func launchServer() {
 
 func (s *Server) Ping(ctx context.Context, a *gRPC.Ack) (*gRPC.Ack, error) {
 	//some code here
+	fmt.Println(a.ClientName, "says hi")
 
 	// make an instance of your return type
 	return &gRPC.Ack{ClientName: "Andreas"}, nil
